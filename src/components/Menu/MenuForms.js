@@ -48,11 +48,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         paddingLeft: '16px'
     },
-    mainTitle: {
-        color: "#465EEF",
-        fontSize: "15px",
-        lineHeight: '2.5',
-    },
     icon: {
         color: "#98A9C7",
         marginRight: '5%',
@@ -62,13 +57,18 @@ const useStyles = makeStyles((theme) => ({
         color: "#465EEF",
         marginRight: '5%',
     },
+    mainTitle: {
+        color: "#465EEF",
+        fontSize: "15px",
+        lineHeight: '2.5',
+    },
     link: {
         color: "#5B6B88",
         textDecorationLine: "none",
     }
 }));
 
-export default function MenuLocation() {
+export default function MenuForms() {
     const classes = useStyles();
 
     return (
@@ -79,21 +79,15 @@ export default function MenuLocation() {
                     <Typography className={classes.typography}> Company</Typography>
                 </div>
                 <Divider sx={{ my: 0.5 }} />
-
-                <MenuList className={classes.menuList}
-                    onClick={ERouterLinks.home}>
+                <MenuList className={classes.menuList}>
                     <Link to={ERouterLinks.home} className={classes.link} >
-                        <MenuItem className={classes.mainTitle}>
-                            <RoomIcon className={classes.iconMain} />
+                        <MenuItem className={classes.menuItem}>
+                            <RoomIcon className={classes.icon} />
                             Локации
                         </MenuItem >
                     </Link>
-                    <Link to={ERouterLinks.forms} className={classes.link} >
-                        <MenuItem className={classes.menuItem}
-                            onClick={ERouterLinks.forms}>
-                            <ArticleIcon className={classes.icon} />
-                            Формы
-                        </MenuItem></Link>
+                    <MenuItem className={classes.mainTitle}>
+                        <ArticleIcon className={classes.iconMain} />Формы</MenuItem>
                     <MenuItem className={classes.menuItem}>
                         <InsertCommentIcon className={classes.icon} /> Отзывы
                     </MenuItem>

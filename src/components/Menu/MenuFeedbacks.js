@@ -14,7 +14,6 @@ import BallotIcon from '@mui/icons-material/Ballot';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { ERouterLinks } from "../../App";
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -61,14 +60,10 @@ const useStyles = makeStyles((theme) => ({
     iconMain: {
         color: "#465EEF",
         marginRight: '5%',
-    },
-    link: {
-        color: "#5B6B88",
-        textDecorationLine: "none",
     }
 }));
 
-export default function MenuLocation() {
+export default function MenuFeedbacks() {
     const classes = useStyles();
 
     return (
@@ -79,23 +74,18 @@ export default function MenuLocation() {
                     <Typography className={classes.typography}> Company</Typography>
                 </div>
                 <Divider sx={{ my: 0.5 }} />
-
                 <MenuList className={classes.menuList}
                     onClick={ERouterLinks.home}>
-                    <Link to={ERouterLinks.home} className={classes.link} >
-                        <MenuItem className={classes.mainTitle}>
-                            <RoomIcon className={classes.iconMain} />
-                            Локации
-                        </MenuItem >
-                    </Link>
-                    <Link to={ERouterLinks.forms} className={classes.link} >
-                        <MenuItem className={classes.menuItem}
-                            onClick={ERouterLinks.forms}>
-                            <ArticleIcon className={classes.icon} />
-                            Формы
-                        </MenuItem></Link>
                     <MenuItem className={classes.menuItem}>
-                        <InsertCommentIcon className={classes.icon} /> Отзывы
+                        <RoomIcon className={classes.icon} />
+                        Локации
+                    </MenuItem >
+                    <MenuItem className={classes.menuItem}
+                        onClick={ERouterLinks.forms}>
+                        <ArticleIcon className={classes.icon} />
+                        Формы</MenuItem>
+                    <MenuItem className={classes.mainTitle}>
+                        <InsertCommentIcon className={classes.iconMain} /> Отзывы
                     </MenuItem>
                     <MenuItem className={classes.menuItem}>
                         <SignalCellularAltIcon className={classes.icon} />
